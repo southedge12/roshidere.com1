@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/*
+   管理ページプレビュー用
+======================== */
+
+body.p01 {
+  font-family : "Noto Sans CJK JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
+#preview .ov_width {
+  max-height: 500px;
+  overflow: auto;
+}
+
+#preview .ov_width .type {
+  text-align: left;
+  max-width: 600px;
+}
+
+#preview .ov_width .tp5 {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+
+#preview .ov_width .tp5>li{
+  width: 15%;
+  margin: 0 10px 10px 0;
+}
+
+#preview .ov_width img{
+  width: 100%;
+  max-width: 250px;
+}
+
+#preview .ov_width .ph {
+  margin: 0;
+}
+
+#preview .ov_width script,
+#preview .ov_width style {
+  display: block;
+  background: #3a3e47;
+  color: #e4dede;
+  padding: 1.5em 1em 1em;
+  position: relative;
+  margin: 2em 0;
+}
+
+#preview .ov_width style::before,
+#preview .ov_width script::before {
+  position: absolute;
+  top: -1em;
+  left: -.5em;
+  padding: .5em .8em;
+  border-radius: 100px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#preview .ov_width style::before {
+  content: "<style>";
+  background: #1a7bad;
+  color: #fff;
+}
+
+#preview .ov_width script::before {
+  content: "<script>";
+  background: #eaa527;
+  color: #333;
+}
+
+body.base [id^="Img_Block"] {
+  position: static !important;
+  visibility: visible !important;
+}
+
+#preview table.pre tr:nth-child(2){
+  font-size: 16px;
+}
+
+#preview table.pre tr:nth-child(2) label {
+  position: relative;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#preview table.pre tr:nth-child(2) input[type="radio"]:checked::after {
+  content: "";
+  height: 4px;
+  background: linear-gradient(-135deg, #ef8637, #e50c20);
+  display: inline-block;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+}

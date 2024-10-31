@@ -1,0 +1,269 @@
+.c-no10 #main {
+  padding: 0 !important;
+}
+.c-no10 .threeDots {
+  display: none;
+}
+
+.screening {
+  text-align: center;
+  color: #000;
+}
+.screening a {
+  color: inherit;
+}
+.screening__kv {
+  margin-bottom: 85px;
+}
+.screening__kv img {
+  width: 100%;
+  -webkit-mask: url(../../images/main/cont/special/event0616/giza.png) bottom center/50px repeat-x, linear-gradient(to top, #fff, #fff) top center/100% calc(100% - 25px) no-repeat;
+          mask: url(../../images/main/cont/special/event0616/giza.png) bottom center/50px repeat-x, linear-gradient(to top, #fff, #fff) top center/100% calc(100% - 25px) no-repeat;
+}
+.screening__event {
+  padding: 0 20px 65px;
+}
+.screening__info {
+  padding: 60px 20px 80px;
+  background: url(../../images/main/cont/special/event0616/info_bg.png);
+  -webkit-mask: url(../../images/main/cont/special/event0616/giza.png) top center/50px repeat-x, url(../../images/main/cont/special/event0616/giza.png) bottom center/50px repeat-x, linear-gradient(to top, #fff, #fff) center center/100% calc(100% - 50px) no-repeat;
+          mask: url(../../images/main/cont/special/event0616/giza.png) top center/50px repeat-x, url(../../images/main/cont/special/event0616/giza.png) bottom center/50px repeat-x, linear-gradient(to top, #fff, #fff) center center/100% calc(100% - 50px) no-repeat;
+}
+.screening__goods {
+  padding: 60px 20px 120px;
+  max-width: 1000px;
+  margin: auto;
+}
+.screening__footer {
+  padding: 110px 20px 50px;
+  color: #fff;
+  font-size: min(1.4rem, 3.5vw);
+  background: url(../../images/main/cont/special/event0616/footer_bg.png);
+  -webkit-mask: url(../../images/main/cont/special/event0616/giza.png) top center/50px repeat-x, linear-gradient(to top, #fff, #fff) bottom center/100% calc(100% - 25px) no-repeat;
+          mask: url(../../images/main/cont/special/event0616/giza.png) top center/50px repeat-x, linear-gradient(to top, #fff, #fff) bottom center/100% calc(100% - 25px) no-repeat;
+}
+.screening__footer .scr-ftLogo {
+  margin-bottom: 6em;
+}
+.screening__footer .copyright {
+  margin: 0;
+}
+
+h2.scr-head {
+  position: relative;
+  z-index: 10;
+  font-size: min(8.7rem, 12vw);
+  line-height: 1;
+  margin: 0 auto min(6rem, 6vw);
+}
+h2.scr-head img {
+  height: 1em;
+}
+
+h3.scr-head {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  color: #ff5f9d;
+  border-bottom: 2px dotted #ff5f9d;
+  margin: 2em 0 5rem;
+  padding-bottom: 1em;
+}
+
+.scr-lead {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3em;
+}
+
+.src-intro {
+  position: relative;
+  font-size: min(2.4rem, 5vw);
+  line-height: min(7rem, 3em);
+  max-width: 920px;
+  margin: auto;
+  font-weight: 700;
+  background: linear-gradient(to bottom, #fff min(7rem - 2px, 3em - 2px), transparent min(7rem - 2px, 3em - 2px)) top center/100% min(7rem, 3em), linear-gradient(to right, #ff5f9d 2px, #fff 2px) top left/4px repeat-x;
+}
+.src-intro::before {
+  content: "";
+  position: absolute;
+  inset: -15rem -13.5rem auto auto;
+  width: 25.4rem;
+  aspect-ratio: 1/1;
+  background: url(../../images/main/cont/special/event0616/circle_purple.png) center center/contain no-repeat;
+}
+.src-intro::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -5.7rem -7.7rem;
+  width: 18.5rem;
+  aspect-ratio: 1/1;
+  background: url(../../images/main/cont/special/event0616/circle_pink.png) center center/contain no-repeat;
+}
+.src-intro p {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+}
+
+.scr-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+  max-width: 1000px;
+  margin: auto auto 1.8em;
+  gap: 1em;
+}
+.scr-info dt {
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.2rem;
+  aspect-ratio: 1/1;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  background: #ff5f9d;
+  border-radius: 50%;
+}
+.scr-info dt.-start {
+  align-self: flex-start;
+}
+.scr-info dd {
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .scr-info {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 640px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scr-info dt {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .scr-info {
+    font-size: min(1.6rem, 4vw);
+  }
+  .scr-info dt {
+    width: 4.5em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ticketTable, .ticketTable tbody, .ticketTable tr, .ticketTable th, .ticketTable td {
+    display: block;
+  }
+}
+
+.scr-tokuten {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2.5em auto;
+}
+.scr-tokuten__img {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 640px;
+  margin: 0 auto 2.5em;
+}
+.scr-tokuten__img figure {
+  width: 300px;
+  max-width: calc(50% - 10px);
+}
+.scr-tokuten .c-customMarkerList > li {
+  padding-left: 0;
+}
+.scr-tokuten .c-customMarkerList > li::before {
+  position: static;
+}
+@media screen and (max-width: 1023px) {
+  .scr-tokuten {
+    max-width: 640px;
+    font-size: min(1.6rem, 4vw);
+  }
+}
+
+.scr-caution {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  .scr-caution {
+    font-size: min(1.4rem, 3.5vw);
+  }
+}
+
+.scr-goodsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+}
+.scr-goodsList > li {
+  width: 480px;
+  max-width: calc(50% - 10px);
+}
+@media screen and (max-width: 767px) {
+  .scr-goodsList {
+    justify-content: center;
+  }
+  .scr-goodsList > li {
+    max-width: 100%;
+  }
+}
+
+.scr-goodsBox {
+  border: 10px solid rgba(255, 95, 157, 0.1);
+  padding: 10px;
+}
+.scr-goodsBox__ph {
+  margin-bottom: 10px;
+}
+.scr-goodsBox__ph img {
+  height: min(475px, 50vw);
+}
+.scr-goodsBox__info {
+  background: url(../../images/main/cont/special/event0616/goods_info_bg.png);
+  color: #fff;
+  line-height: 2.8rem;
+  padding: 1.2rem 0 1rem;
+  margin-bottom: 1em;
+}
+.scr-goodsBox__info b {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.scr-goodsBox__spec {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 1023px) {
+  .scr-goodsBox__ph img {
+    height: min(475px, 80vw);
+  }
+}
+
+.scr-goodsInfo {
+  text-align: left;
+  font-size: 1.4rem;
+}
+.scr-goodsInfo th {
+  font-weight: inherit;
+  padding-right: 0.5em;
+}
+@media screen and (max-width: 425px) {
+  .scr-goodsInfo table, .scr-goodsInfo tbody, .scr-goodsInfo tr, .scr-goodsInfo th, .scr-goodsInfo td {
+    display: block;
+  }
+}
+/*# sourceMappingURL=usa_009.css.map */

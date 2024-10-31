@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/*
+  Header
+========================================== */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 460px;
+  padding: 60px 110px 60px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: 0.3s;
+  z-index: 800;
+  color: #fff;
+  background: #c5a3d8;
+}
+.header__inner {
+  transition: 1s ease;
+}
+#g_navi:not(.is-open) .header {
+  pointer-events: none;
+  transform: translateX(100%);
+  transition-delay: 0.5s;
+}
+#g_navi:not(.is-open) .header__inner {
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 0.5s ease;
+}
+#g_navi.is-open .header__inner {
+  transition-delay: 0.3s;
+}
+.header__logo {
+  margin-bottom: 55px;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/*
+  Overlay
+========================================== */
+.navOverlay {
+  position: fixed;
+  z-index: 700;
+  inset: 0;
+}
+#g_navi:not(.is-open) .navOverlay {
+  display: none;
+}
+
+/*
+  Drawr Button
+========================================== */
+.menuFix {
+  position: fixed;
+  top: 22px;
+  right: 17px;
+  z-index: 900;
+  width: 50px;
+}
+.menuFix__btn {
+  margin-bottom: 25px;
+}
+.menuFix__share {
+  text-align: center;
+  color: #c58be0;
+  transition: 0.3s ease;
+}
+.menuFix__share::before {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.menuFix__share .socialList li {
+  margin-bottom: 11px;
+}
+.menuFix__share .socialList li a {
+  display: inline-block;
+  width: 38px;
+}
+#g_navi.is-open .menuFix__share {
+  filter: brightness(2);
+}
+#g_navi:not(.is-open) .menuFix__share {
+  transition-delay: 0.5s;
+}
+@media screen and (max-width: 1023px) {
+  .menuFix__share {
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+  }
+  .menuFix__share::before {
+    font-size: 1.2rem;
+  }
+  .menuFix__share .socialList li a {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menuFix {
+    top: 12px;
+    right: 8px;
+    width: 45px;
+  }
+}
+
+.menuButton {
+  background: #c58be0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  line-height: 1;
+  transition: 0.3s ease;
+}
+#g_navi.is-open .menuButton {
+  background: rgba(197, 139, 224, 0);
+}
+#g_navi:not(.is-open) .menuButton {
+  transition-delay: 0.5s;
+}
+
+.menuIcon {
+  position: relative;
+  width: 35px;
+  height: 29px;
+  margin: auto;
+}
+.menuIcon__line {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 5px;
+  background: radial-gradient(circle, #fff 2px, transparent 3px) left center/7px 5px repeat-x;
+  -webkit-mask: linear-gradient(to right, #fff, #fff) left top/auto 100% no-repeat;
+          mask: linear-gradient(to right, #fff, #fff) left top/auto 100% no-repeat;
+  transition: 0.3s;
+}
+.menuIcon__line:nth-child(1) {
+  top: 0;
+  -webkit-mask-size: 21px 100%;
+          mask-size: 21px 100%;
+}
+.menuIcon__line:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-mask-size: 28px 100%;
+          mask-size: 28px 100%;
+}
+.menuIcon__line:nth-child(3) {
+  bottom: 0;
+  -webkit-mask-size: 35px 100%;
+          mask-size: 35px 100%;
+}
+#g_navi.is-open .menuIcon__line:nth-child(1) {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  -webkit-mask-size: 35px 100%;
+          mask-size: 35px 100%;
+}
+#g_navi.is-open .menuIcon__line:nth-child(2) {
+  transform: scale(0);
+}
+#g_navi.is-open .menuIcon__line:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.globalNavi {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: YakuHanMP_Noto, "Noto Serif JP", "ヒラギノ明朝 ProN W3", "游明朝 Medium", "Yu Mincho Medium", "游明朝", "Yu Mincho", YuMincho, serif;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+.globalNavi li {
+  display: block;
+  margin-bottom: 15px;
+}
+.globalNavi a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+  Language
+========================================== */
+/*Switch*/
+.langSwitchList {
+  display: flex;
+  flex-direction: column;
+  background: #c5c5c5;
+}
+.langSwitchList > li {
+  margin: 0;
+}
+#g_navi.is-open .langSwitchList {
+  background: rgba(197, 197, 197, 0);
+}
+#g_navi:not(.is-open) .langSwitchList {
+  transition-delay: 0.5s;
+}
+
+.js-langSwitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.2rem;
+  line-height: 0;
+  text-align: center;
+  font-family: Arial, YakuHanMP_Noto, "Noto Serif JP", "ヒラギノ明朝 ProN W3", "游明朝 Medium", "Yu Mincho Medium", "游明朝", "Yu Mincho", YuMincho, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 auto;
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+.js-langSwitch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #c58be0;
+  transform: scale(1, 0);
+  transition: 0.3s ease;
+}
+.js-langSwitch.is-crt::before {
+  transform: scale(1);
+}
+.js-langSwitch[data-lang=ja]::before {
+  transform-origin: bottom center;
+}
+.js-langSwitch[data-lang=en]::before {
+  transform-origin: top center;
+}
+#g_navi.is-open .js-langSwitch::before {
+  background: #fff;
+}
+#g_navi.is-open .js-langSwitch.is-crt {
+  color: #c58be0;
+}
+
+/*Block*/
+body[data-lang=en] .js-trans[lang=ja],
+body[data-lang=ja] .js-trans[lang=en] {
+  display: none;
+}
+/*# sourceMappingURL=g_navi_h.css.map */

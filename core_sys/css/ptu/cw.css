@@ -1,0 +1,49 @@
+.cw {
+  text-align: center;
+  margin-top: 60px;
+  padding: 65px 20px 50px;
+  background: linear-gradient(to right, #b2b2b2 4px, transparent 4px) top left/10px 4px repeat-x;
+}
+.cw .copyright {
+  font-size: 1.4rem;
+  color: #000;
+}
+.cw__logo {
+  width: 410px;
+  max-width: 70%;
+  margin: auto auto 60px;
+}
+.cw__bnr {
+  width: 550px;
+  max-width: 90%;
+  margin: auto auto 60px;
+}
+.cw__bnr p{
+  border: 1px solid #ededed;
+}
+
+.scrollButton {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 80px;
+  transition: 1s ease;
+  z-index: 600;
+}
+.scrollButton:not(.inview) {
+  transform: translateY(120px);
+  visibility: hidden;
+}
+@media screen and (max-width: 1023px) {
+  .scrollButton {
+    bottom: 16px;
+    width: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .scrollButton {
+    bottom: 14px;
+    width: 60px;
+  }
+}
+/*# sourceMappingURL=cw.css.map */

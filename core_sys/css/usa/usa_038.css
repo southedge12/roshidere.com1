@@ -1,0 +1,261 @@
+@charset "UTF-8";
+body[data-lang="en"]{
+  word-break: break-word;
+}
+/* shutter 
+========================================== */
+#shutter {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  overflow: hidden;
+  background: #f5e4ff;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#shutter.open {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#shutter.close {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.sectionBg {
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease 0.5s;
+}
+.sectionBg:not(.-inview) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.sectionBg__normal img, .sectionBg__blur img, .sectionBg__blur-02 img {
+  transition: 1.8s cubic-bezier(0, 0, 0, 1);
+}
+.sectionBg__normal:not(.-inview) img, .sectionBg__blur:not(.-inview) img, .sectionBg__blur-02:not(.-inview) img {
+  opacity: 0;
+}
+.sectionBg__normal:not(.-inview).-left img, .sectionBg__blur:not(.-inview).-left img, .sectionBg__blur-02:not(.-inview).-left img {
+  transform: translateX(-100vw);
+}
+.sectionBg__normal:not(.-inview).-right img, .sectionBg__blur:not(.-inview).-right img, .sectionBg__blur-02:not(.-inview).-right img {
+  transform: translateX(100vw);
+}
+.sectionBg__normal:not(.-inview).-top img, .sectionBg__blur:not(.-inview).-top img, .sectionBg__blur-02:not(.-inview).-top img {
+  transform: translateY(-100vw);
+}
+.sectionBg__normal:not(.-inview).-bottom img, .sectionBg__blur:not(.-inview).-bottom img, .sectionBg__blur-02:not(.-inview).-bottom img {
+  transform: translateY(100vw);
+}
+.sectionBg__blur {
+  z-index: -1;
+}
+.sectionBg__blur-02 {
+  z-index: -2;
+}
+
+.threeDots {
+  position: fixed;
+  opacity: 0.8;
+  -webkit-animation: huerotate 20s infinite;
+  animation: huerotate 20s infinite;
+  pointer-events: none;
+  z-index: 100;
+}
+.threeDots__inn {
+  width: 60px;
+  height: 20px;
+  background: radial-gradient(circle, #f4e2ff 5px, transparent 5px) left bottom/20px 20px repeat-x;
+}
+.-inview > .threeDots__inn {
+  -webkit-animation: dotAppend 2.5s steps(3);
+          animation: dotAppend 2.5s steps(3);
+}
+:not(.-inview) > .threeDots__inn {
+  filter: blur(20px);
+  opacity: 0;
+  transition: 2s;
+}
+
+@-webkit-keyframes dotAppend {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+@keyframes dotAppend {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
+}
+@-webkit-keyframes huerotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes huerotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+/* NEWマーク
+========================================== */
+.is-new {
+  position: relative;
+}
+.is-new::before {
+  content: "";
+  position: absolute;
+  width: 76px;
+  height: 61px;
+  right: 100%;
+  top: 0.8em;
+  background: url(../../images/main/home/new_mark.png) center center/contain no-repeat;
+}
+@media screen and (max-width: 425px) {
+  .is-new::before {
+    width: 45px;
+  }
+}
+
+/* Youtube
+========================================== */
+/*
+  width = ウィンドウ幅 - 左右マージンの合計
+  height = width * 9/16
+  ※単位vwはスクロールバーを含めた値になるため、PCの場合は少しずれる。
+  　スマホは問題ない。
+*/
+.read :not(.c-youtubeWrap) > iframe,
+.read .c-youtubeWrap {
+  margin: 1em 0;
+}
+
+.read iframe {
+  max-width: 640px;
+  max-height: 360px;
+  width: calc(100vw - 40px);
+  height: calc((100vw - 40px) * 9 / 16);
+}
+
+/* ページネーション（ネクストバック）
+========================================== */
+/* ネクストバックナビ */
+.nb_navi {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* 件数表示 */
+/* 件数件表示（数字） */
+/* ページネーション（リスト） */
+.page_navi > ul {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ページネーション（ページ数、前、次） */
+/* ページネーション（前、次のみ） */
+.page_navi li.nb_pre,
+.page_navi li.nb_nex {
+  margin: 0 1em;
+}
+
+/* ページネーション（ページ数のみ） */
+.page_navi li.nb_crt,
+.page_navi li.nb_link {
+  margin: 0 0.5em;
+}
+
+/* ページネーション（ページ数 カレント） */
+/* ページネーション（リンク） */
+.page_navi a {
+  text-decoration: none;
+}
+
+/* ページネーション リンクなし */
+.page_navi li > span {
+  opacity: 0.2;
+}
+
+/* バナーユニット
+========================================== */
+[id^=bnu_001_] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0 0;
+}
+
+[id^=bnu_001_] > p {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 10px 10px;
+}
+
+/* ==========================================
+*
+*  mfp
+*
+========================================== */
+.mfp-bg {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 1;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+/*# sourceMappingURL=usa_038.css.map */
